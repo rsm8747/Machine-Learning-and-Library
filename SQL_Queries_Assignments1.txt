@@ -1,0 +1,100 @@
+-- Create Sales table
+
+CREATE TABLE Sales (
+    sale_id INT PRIMARY KEY,
+    product_id INT,
+    quantity_sold INT,
+    sale_date DATE,
+    total_price DECIMAL(10, 2)
+);
+
+-- Insert sample data into Sales table
+
+INSERT INTO Sales (sale_id, product_id, quantity_sold, sale_date, total_price) VALUES
+(1, 101, 5, '2024-01-01', 2500.00),
+(2, 102, 3, '2024-01-02', 900.00),
+(3, 103, 2, '2024-01-02', 60.00),
+(4, 104, 4, '2024-01-03', 80.00),
+(5, 105, 6, '2024-01-03', 90.00);
+
+
+
+
+-- Create Products table
+
+CREATE TABLE Products (
+    product_id INT PRIMARY KEY,
+    product_name VARCHAR(100),
+    category VARCHAR(50),
+    unit_price DECIMAL(10, 2)
+);
+
+-- Insert sample data into Products table
+
+INSERT INTO Products (product_id, product_name, category, unit_price) VALUES
+(101, 'Laptop', 'Electronics', 500.00),
+(102, 'Smartphone', 'Electronics', 300.00),
+(103, 'Headphones', 'Electronics', 30.00),
+(104, 'Keyboard', 'Electronics', 20.00),
+(105, 'Mouse', 'Electronics', 15.00);
+
+
+
+1. Retrieve all columns from the Sales table.
+2. Retrieve the product_name and unit_price from the Products table.
+3. Retrieve the sale_id and sale_date from the Sales table.
+4. Filter the Sales table to show only sales with a total_price greater than $100.
+5. Filter the Products table to show only products in the ‘Electronics’ category.
+6. Retrieve the sale_id and total_price from the Sales table for sales made on January 3, 2024.
+7. Retrieve the product_id and product_name from the Products table for products with a unit_price greater than $100.
+8. Calculate the total revenue generated from all sales in the Sales table.
+9. Calculate the average unit_price of products in the Products table.
+10. Calculate the total quantity_sold from the Sales table.
+11. Retrieve the sale_id, product_id, and total_price from the Sales table for sales with a quantity_sold greater than 4.
+12. Retrieve the product_name and unit_price from the Products table, ordering the results by unit_price in descending order.
+13. Retrieve the total_price of all sales, rounding the values to two decimal places.
+14. Calculate the average total_price of sales in the Sales table.
+15. Retrieve the sale_id and sale_date from the Sales table, formatting the sale_date as ‘YYYY-MM-DD’.
+16. Calculate the total revenue generated from sales of products in the ‘Electronics’ category.
+17. Retrieve the product_name and unit_price from the Products table, filtering the unit_price to show only values between $20 and $600.
+18. Retrieve the product_name and category from the Products table, ordering the results by category in ascending order.
+19. Calculate the total quantity_sold of products in the ‘Electronics’ category.
+20. Retrieve the product_name and total_price from the Sales table, calculating the total_price as quantity_sold multiplied by unit_price.
+
+
+1. Calculate the total revenue generated from sales for each product category.
+2. Find the product category with the highest average unit price.
+3. Identify products with total sales exceeding 30.
+4. Count the number of sales made in each month.
+5. Determine the average quantity sold for products with a unit price greater than $100.
+6. Retrieve the product name and total sales revenue for each product.
+7. List all sales along with the corresponding product names.
+8. Retrieve the product name and total sales revenue for each product.
+9. Rank products based on total sales revenue.
+10. Calculate the running total revenue for each product category.
+11. Categorize sales as “High”, “Medium”, or “Low” based on total price (e.g., > $200 is High, $100-$200 is Medium, < $100 is Low).
+12. Identify sales where the quantity sold is greater than the average quantity sold.
+13. Extract the month and year from the sale date and count the number of sales for each month.
+14. Calculate the number of days between the current date and the sale date for each sale.
+15. Identify sales made during weekdays versus weekends.
+
+
+
+
+
+**************************Self study based examples**********************************
+
+1. Write a query to create a view named Total_Sales that displays the total sales amount for each product along with their names and categories.
+2. Retrieve the product details (name, category, unit price) for products that have a quantity sold greater than the average quantity sold across all products.
+3. Explain the significance of indexing in SQL databases and provide an example scenario where indexing could significantly improve query performance in the given schema.
+4. Add a foreign key constraint to the Sales table that references the product_id column in the Products table.
+5. Create a view named Top_Products that lists the top 3 products based on the total quantity sold.
+6. Implement a transaction that deducts the quantity sold from the Products table when a sale is made in the Sales table, ensuring that both operations are either committed or rolled back together.
+7. Create a query that lists the product names along with their corresponding sales count.
+8. Write a query to find all sales where the total price is greater than the average total price of all sales.
+9. Analyze the performance implications of indexing the sale_date column in the Sales table, considering the types of queries commonly executed against this column.
+10. Add a check constraint to the quantity_sold column in the Sales table to ensure that the quantity sold is always greater than zero.
+11. Create a view named Product_Sales_Info that displays product details along with the total number of sales made for each product.
+12. Develop a stored procedure named Update_Unit_Price that updates the unit price of a product in the Products table based on the provided product_id.
+13. Implement a transaction that inserts a new product into the Products table and then adds a corresponding sale record into the Sales table, ensuring that both operations are either fully completed or fully rolled back.
+14. Write a query that calculates the total revenue generated from each category of products for the year 2024.
